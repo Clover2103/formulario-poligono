@@ -1,0 +1,9 @@
+<?php
+
+$cont = [];
+
+if (condition) {
+    
+}
+
+?>

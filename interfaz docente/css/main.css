@@ -1,0 +1,160 @@
+.navbar {
+    box-shadow: 2px 2px 5px #000;
+    opacity: .9;
+}
+
+.card-emision, .card-carta, .card-masivo, .card-mensaje  {
+  box-shadow: 4px 4px 7px #000;
+}
+
+
+.navbar .nav-item .nav-link {
+    color: white;
+}
+
+.deshabilitar {
+  pointer-events:none;
+  opacity:0.6; 
+}
+
+body{
+    /* background: url('../img/grupo.png'); */
+    background-size: 100%;
+    
+}
+
+#card-loader{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    margin: 10px;
+  }
+
+#card-loader .loader1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    border: solid 10px transparent;
+    /*border-top-color: white;
+    border-left-color: white;*/
+    border-top-color: #2C3136;
+    border-left-color: #2C3136;
+    border-radius: 50%;
+    animation: loader1 1.4s linear infinite;
+  }
+   
+#card-loader .loader2{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 70%;
+    height: 70%;
+    border: solid 10px transparent;
+    /*border-top-color: #b3dcff;
+    border-left-color: #b3dcff;*/
+    border-top-color: #17A2B8;
+    border-left-color: #17A2B8;
+    border-radius: 50%;
+    animation: loader2 1.2s linear infinite;
+  }
+
+
+  table { 
+    width: 100%;
+    text-align: left;
+    background-color:whitesmoke;
+    border-collapse: collapse;
+  }
+
+  table thead { 
+    background-color: #4582EC;
+    color: black; 
+  }
+
+  table th { 
+    background-color:#578EED;
+    color: black; 
+  }
+
+  table td { 
+    background-color: whitesmoke;
+    color: black; 
+  }
+
+  table td, 
+  table th{ 
+    padding: 10px;
+    border: 2px solid black; 
+   }
+
+  .campo_table {
+    padding: 0px;
+    font-size: 0.8em;
+    font-weight: 100;
+    border: 1px solid rgb(85, 85, 85);
+  }
+
+  thead .campo_table {
+    padding: 2px;
+    font-size: 1em;
+    font-weight: 400;
+    border: 1px solid rgb(85, 85, 85);
+  }
+
+  .numero {
+    min-width: 35px;
+  }
+
+  .codigo, .entrega {
+    min-width: 80px;
+  }
+
+  .documento, .celular, .n_contacto, .entrega{
+    min-width: 100px;
+  }
+
+  .correo {
+    min-width: 250px;
+  }
+
+  
+  .btn_enviar {
+      width: 155px;
+      border: none;
+      border-radius: 25px;
+      padding: 8px;
+      background-color: #212C60;
+      color: #fff;
+      cursor: pointer;
+  }
+
+  /* Establece un tamaño máximo de altura para las ventanas emergentes de Swal */
+  .swal-container {
+    max-height: 80vh; /* Ajusta el valor según tus necesidades */
+    overflow-y: auto; /* Agrega scroll vertical si el contenido excede el tamaño máximo */
+    overflow-x: hidden;
+  }
+
+  .btn-group, .btn-group-vertical {
+    position: absolute !important;
+  }
+   
+  @keyframes loader1{
+    0%{
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100%{
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+   
+  @keyframes loader2{
+    0%{
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100%{
+      transform: translate(-50%, -50%) rotate(-360deg);
+    }
+  }

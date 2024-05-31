@@ -1,0 +1,207 @@
+body {
+    background: linear-gradient(#fff, #212C60);
+    min-height: 100vh;
+}
+
+.secc_prin {
+    min-height: 250px;
+    max-width: 600px;
+    margin: 8px auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid #212C60;
+    border-top: 8px solid #2f2bff;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+    .secc_prin h2 {
+        text-align: center;
+        max-width: 500px;
+    }
+
+    .secc_prin p {
+        text-align: justify;
+        max-width: 500px;
+    }
+
+.secc_prin_2 {
+    height: 250px;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid #212C60;
+    border-top: 8px solid #2f2bff;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+    .secc_prin_2 h2 {
+        text-align: center;
+        max-width: 500px;
+    }
+
+    .val-cod {
+        min-width: 300px;
+    }
+
+.input {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: start;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 10px auto;
+    border: 0.2px solid #212C60;
+    max-width: 600px;
+    border-radius: 8px;
+    height: 150px;
+    background-color: #fff;
+}
+
+    span {
+        color: red;
+    }
+
+.input_doc {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: start;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 10px auto;
+    border: 0.2px solid #212C60;
+    max-width: 600px;
+    border-radius: 8px;
+    height: 150px;
+    background-color: #fff;
+}
+
+.input_envio {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-left: 20px;
+    margin: 10px auto;
+    border: 0.2px solid #212C60;
+    max-width: 600px;
+    border-radius: 8px;
+    height: 150px;
+    background-color: #fff;
+}
+
+    .btn_enviar{
+        width: 155px;
+        border: none;
+        border-radius: 25px;
+        padding: 8px;
+        background-color: #212C60;
+        color: #fff;
+        cursor: pointer;
+        opacity: 0.5;
+    }
+
+    .btn_enviar_form {
+        width: 155px;
+        border: none;
+        border-radius: 25px;
+        padding: 8px;
+        background-color: #212C60;
+        color: #fff;
+        cursor: pointer;
+    }
+
+        .btn_enviar img {
+            width: 20px;
+            height: 20px;
+        }
+
+    .input_envio .btn_borrar {
+        border: none;
+        background-color: transparent;
+        color: red;
+        cursor: pointer;
+    }
+
+.contMsg {
+    display: none;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: start;
+    padding-left: 20px;
+    margin: 10px auto;
+    border: 0.2px solid #212C60;
+    max-width: 600px;
+    border-radius: 8px;
+    min-height: 150px;
+    color: #fff;
+    padding: 10px;
+}
+
+    .custom-file-label {
+        background-color: #dddbd5;
+        width: 200px;
+        color: #000;
+        text-align: center;
+        padding: 8px;
+        border-radius: 25px;
+        cursor: pointer;
+    }
+
+
+.contMsgOk {
+    display: none;
+}
+
+    .contMsgConOk {
+        background: rgba(33, 41, 52, .85);
+        left: 0;
+        bottom: 0;
+        right: 0;
+        top: 0;
+        display: flex;
+        position: fixed;
+        z-index: 999;
+    }
+
+        .contMsgConOk .contMsgConInOk {
+            background: #d5fdc0;
+            border-radius: 2px;
+            box-shadow: 0 1px 3px rgba(33, 41, 52, .75);
+            box-sizing: content-box;
+            display: flex;
+            justify-content: space-around;
+            flex-direction: column;
+            margin: auto;
+            height: 250px;
+            max-width: 600px;
+            min-width: 320px !important;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            padding: 25px 10px 15px 10px;
+            font-size: 1.3rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .contMsgConMOkImg img {
+            height: 82px;
+        }
+
+        .contMsgConInOk button {
+            background-color: transparent;
+            border: none;
+            color: #2f2bff;
+            cursor: pointer;
+        }
+
