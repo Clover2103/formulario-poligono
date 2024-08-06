@@ -153,7 +153,7 @@ include_once ("../components/head.php");
     <!-- Conexion de libreria de JQuery  -->
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <!-- Conexion de documento JS -->
-    <script src="../js/main.js"></script>
+    <script src="../js/app.js"></script>
 
     <!-- Script de validacion de codigo del poligono -->
     <script>
