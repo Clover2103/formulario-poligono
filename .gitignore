@@ -26,5 +26,5 @@
 conexionBD.php
 
 # Ignorar directorios de ids #
-ids/
+ids/*
 

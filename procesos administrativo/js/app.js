@@ -190,10 +190,11 @@ $(document).ready(function () {
                                         <th class="campo_table numero">#</th>
                                         <th class="campo_table codigo">Codigo</th>
                                         <th class="campo_table documento">Docente</th>
-                                        <th class="campo_table">Sede</th>
+                                        <th class="campo_table entrega">Sede</th>
                                         <th class="campo_table celular">Fecha del poligono</th>
-                                        <th class="campo_table correo">Estado</th>
-                                        <th class="campo_table correo">Participantes</th>
+                                        <th class="campo_table entrega">Estado</th>
+                                        <th class="campo_table entrega">Cerrar</th>
+                                        <th class="campo_table entrega">Participantes</th>
                                     </tr>
                                 </thead>
                                 <tbody id="btable_poligono">
@@ -254,10 +255,7 @@ $(document).ready(function () {
 
                 if (res.arraydatos !== undefined) {
 
-                    console.log(res.arraydatos);
-
                     $('#tabla_poligonos').show();
-
 
                     res.arraydatos.datos.forEach(dato => {
                         plantilla += `
@@ -268,10 +266,11 @@ $(document).ready(function () {
                                 <th class="campo_table">${dato.sede}</th>
                                 <th class="campo_table">${dato.fecha_programada}</th>
                                 <th class="campo_table">${dato.estado}</th>
+                                <th class="campo_table"><button value="${dato.cod_poli}" class="btn btn-danger w-100 btn_close_poligono">Cerrar</button></th>
                                 <th class="campo_table">${dato.cantidad_registros}</th>
                             </tr>
                         `;   
-                    });                    
+                    });
 
                     $('#btable_poligono').html(plantilla);
 
@@ -368,7 +367,7 @@ $(document).ready(function () {
                 });
 
                  // Cuando cambia la fecha de inicio
-                 $('#fecha_inicio').change(function() {
+                $('#fecha_inicio').change(function() {
                     // Obtener el valor de la fecha de inicio
                     var fechaInicio = $(this).val();
                     // Establecer la fecha mínima en el input de fecha de fin
@@ -633,5 +632,50 @@ $(document).ready(function () {
         });
 
     });
+
+    // ********************************************************************************************** //
+  // ************************************ CERRAR POLIGONO ***************************************** //
+  // ********************************************************************************************** //
+
+  $(document).on('click', '.btn_close_poligono', function(e) {
+    e.preventDefault();
+
+    var cerrar = $(this).val();
+    let url = "./drivers/cerrar_poligono.php";
+
+    Swal.fire({
+        title: '¿Deseas cerrar el polígono?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Sí, cerrar'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            // Ejecutar la solicitud AJAX para cerrar el polígono
+            $.ajax({
+                url: url,
+                type: 'POST', 
+                data: { codigo: cerrar },
+                success: function(response) {
+                    // Mostrar un mensaje de éxito
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Polígono cerrado',
+                        text: response.message
+                    });
+                },
+                error: function(xhr, status, error) {
+                    // Mostrar un mensaje de error
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: 'No se pudo cerrar el polígono. Inténtalo de nuevo.'
+                    });
+                }
+            });
+        }
+    });
+});
 
 });
