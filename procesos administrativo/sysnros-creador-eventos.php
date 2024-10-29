@@ -43,13 +43,7 @@ $conexion = $objeto -> conexionBD();
         <div class="container mt-4">
             <div class="row">
                 <div class="col-md-3">
-                    <button id="crear_poli" class="btn btn-success w-100">Crear nuevo poligono</button>
-                </div>
-                <div class="col-md-3">
-                    <button id="consulta_poli" class="btn btn-primary w-100">Consulta de poligono</button>
-                </div>
-                <div class="col-md-3">
-                    <button id="crear_doce" class="btn btn-warning w-100">Creacion de docentes</button>
+                    <button id="crear_evento" class="btn btn-success w-100">Crear nuevo evento</button>
                 </div>
             </div>
         </div>

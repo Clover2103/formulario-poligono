@@ -6,6 +6,8 @@ include_once("../conexionBD.php");
 $objeto = new Cconexion();
 $conexion = $objeto -> conexionBD();
 
+date_default_timezone_set('America/Bogota');
+
 // Función para generar un código único de 6 letras en mayúsculas
 function generarCodigo() {
     // Caracteres permitidos para el código
@@ -49,6 +51,9 @@ $docente                = $_POST['docente'];
 $sede                   = $_POST['sede'];
 $fecha_poligono         = $_POST['fecha_poligono'];
 $fecha_actual = date("Y-m-d H:i:s");
+$fecha_fin = new DateTime($fecha_poligono);
+$fecha_fin->modify('+2 hours');
+$fecha_fin_str = $fecha_fin->format('Y-m-d H:i:s');
 
 try {
     $query = "INSERT INTO poligono_programado (cod_poli, cod_docente, sede, fecha_programada, fecha_poligono)
@@ -60,6 +65,15 @@ try {
     $insert -> bindParam(':fecha_poligono',$fecha_poligono,PDO::PARAM_STR);
     $insert -> bindParam(':fecha_actual',$fecha_actual,PDO::PARAM_STR);
     $insert->execute();
+
+    $query_eve = "INSERT INTO eventos_especiales (nombre, fecha_inicio, fecha_fin, fecha_creacion)
+        VALUES ('Ejercicio de poligono',:fecha_poligono,:fecha_fin,:fecha_actual)";
+    $in_eve = $conexion->prepare("$query_eve");
+    $in_eve -> bindParam(':fecha_poligono',$fecha_poligono,PDO::PARAM_STR);
+    $in_eve -> bindParam(':fecha_fin',$fecha_fin_str,PDO::PARAM_STR);
+    $in_eve -> bindParam(':fecha_actual',$fecha_actual,PDO::PARAM_STR);
+    $in_eve->execute();
+
     $cont['mensaje'] = 'Se programo correctamente el poligono para el dia ' . $fecha_poligono . ' El codigo del poligono es <b>' . $codigoGenerado . '</b>';
 } catch (PDOException $e) {
     $cont['error'] =  'Surgio un error ' . $e->getMessage();

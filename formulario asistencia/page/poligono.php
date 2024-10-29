@@ -152,8 +152,9 @@ include_once ("../components/head.php");
 
     <!-- Conexion de libreria de JQuery  -->
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.all.min.js"></script>
     <!-- Conexion de documento JS -->
-    <script src="../js/app.js"></script>
+    <script src="../js/main.js"></script>
 
     <!-- Script de validacion de codigo del poligono -->
     <script>
