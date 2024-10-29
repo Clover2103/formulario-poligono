@@ -23,7 +23,7 @@
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode
 
 # Ignorar el archivo de conexión a la base de datos
-conexionBD.php
+**/conexionBD.php
 
 # Ignorar directorios de ids #
 ids/*
